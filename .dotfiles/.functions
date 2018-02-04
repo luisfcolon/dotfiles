@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+rvmup() {
+  echo "Installing and switching to ruby-$1..."
+  rvm get stable
+  rvm install ruby-$1
+  rvm use $1
+  gem install bundler
+  bundle install -j4
+}
+
+killport() {
+  echo "Killing all processes running on port $1..."
+  lsof -n -i:$1 | grep LISTEN | awk '{ print $2 }' | uniq | xargs kill -9
+}
+
+titlebar() {
+  echo -n $'\e]0;'"$*"$'\a';
+}
+
+ltrim() {
+  local char=${1:-[:space:]}
+  sed "s%^[${char//%/\\%}]*%%"
+}
+
+rtrim() {
+  local char=${1:-[:space:]}
+  sed "s%[${char//%/\\%}]*$%%"
+}
+
+trim() {
+  ltrim "$1" | rtrim "$1"
+}
+
+squeeze() {
+  local char=${1:-[[:space:]]}
+  sed "s%\(${char//%/\\%}\)\+%\1%g" | trim "$char"
+}

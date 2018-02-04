@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+function git_branch_ps1() {
+  git rev-parse 2>/dev/null && echo -e "($(git rev-parse --abbrev-ref HEAD))"
+}
+
+export PS1="\n🤖  \w \[\033[0;92m\]\$(git_branch_ps1)\[\033[0m\]\n\[\033[0;92m\]\\$\[\033[0m\] "
+export PS2="\[\033[38;5;2m\]$\[$(tput sgr0)\] "

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Git
+alias gp='git pull'
+alias gcm='git checkout master'
+alias gc='git checkout'
+alias gfa='git fetch --all'
+alias gs='git stash --include-untracked'
+alias gsa='git stash apply'
+alias grc='git rebase --continue'
+alias gra='git rebase --abort'

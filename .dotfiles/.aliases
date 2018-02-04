@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# Managing dotfiles
+alias showalias='vim ~/.dotfiles/.aliases'
+alias srcalias='source ~/.dotfiles/.aliases'
+alias showbp='vim ~/.bash_profile'
+alias srcbp='source ~/.bash_profile'
+
+# Misc
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias hosts="sudo $EDITOR /etc/hosts"
+alias flushdns="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+alias chrome="open -a Google\ Chrome"
+alias path='echo -e ${PATH//:/\\n}'
+
+# Moving around directory
+alias ..='cd ../'
+alias .2='cd ../../'
+alias .3='cd ../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../../'
+
+# Python
+alias python='python3'
+alias pip='pip3'
+
+# Mysql
+alias mysqlstart='sudo /usr/local/mysql/support-files/mysql.server start'
+alias mysqlstop='sudo /usr/local/mysql/support-files/mysql.server stop'
+alias mysqlrestart='sudo /usr/local/mysql/support-files/mysql.server restart'
+
+# Projects
+alias stash='cd ~/Workspace/stash'
+alias sr='cd ~/Workspace/stash/stash-invest-rails'
+alias w='cd ~/Workspace'
+alias p='cd ~/Workspace/projects'
+
+# Homebrew
+alias brewup="brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor"
