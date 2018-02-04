@@ -31,8 +31,6 @@ alias mysqlstop='sudo /usr/local/mysql/support-files/mysql.server stop'
 alias mysqlrestart='sudo /usr/local/mysql/support-files/mysql.server restart'
 
 # Projects
-alias stash='cd ~/Workspace/stash'
-alias sr='cd ~/Workspace/stash/stash-invest-rails'
 alias w='cd ~/Workspace'
 alias p='cd ~/Workspace/projects'
 
