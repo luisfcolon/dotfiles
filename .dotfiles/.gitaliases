@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-# Git
 alias gp='git pull'
 alias gcm='git checkout master'
 alias gc='git checkout'
 alias gfa='git fetch --all'
+alias gst='git status'
 alias gs='git stash --include-untracked'
 alias gsa='git stash apply'
 alias grc='git rebase --continue'
 alias gra='git rebase --abort'
+alias gl='git log'
+alias glg='git log --date-order --all --graph --format="%C(green)%h%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
