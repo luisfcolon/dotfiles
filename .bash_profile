@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-source ~/.profile
-
 declare -a rootfiles=(
   ".profile"
 )
