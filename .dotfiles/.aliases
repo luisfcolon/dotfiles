@@ -8,7 +8,7 @@ alias srcbp='source ~/.bash_profile'
 
 # Misc
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-alias hosts="sudo $EDITOR /etc/hosts"
+alias hosts="sudo vim /etc/hosts"
 alias flushdns="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias chrome="open -a Google\ Chrome"
