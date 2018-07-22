@@ -5,6 +5,7 @@ declare -a rootfiles=(
 )
 
 declare -a dotfiles=(
+  ".paths"
   ".macos"
   ".exports"
   ".aliases"
