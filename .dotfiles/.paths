@@ -1,6 +1,7 @@
+#!/usr/bin/env bash
+
 # Paths and directories
-export PATH=/usr/local/sbin:~/.composer/vendor/bin:/usr/local/bin:/usr/local/mysql/bin:$(brew --prefix homebrew/php/php70)/bin:$PATH
-export PATH="$PATH:$HOME/.rvm/bin";
+export PATH=/usr/local/bin:/usr/local/sbin:~/.composer/vendor/bin:/usr/local/mysql/bin:$(brew --prefix homebrew/php/php70)/bin:$PATH
 
 # Remove duplicates from PATH
 remove_dups() {
