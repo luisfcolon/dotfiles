@@ -11,6 +11,7 @@ declare -a dotfiles=(
   ".aliases"
   ".gitaliases"
   ".functions"
+  ".ruby_functions"
   ".prompt"
 )
 
