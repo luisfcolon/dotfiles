@@ -45,3 +45,6 @@ alias p='cd ~/Workspace/projects'
 
 # Homebrew
 alias brewup="brew update; brew upgrade; brew cleanup; brew cask cleanup; brew prune; brew doctor"
+
+# Utilities
+alias diskspace='du -shc .??* *'
