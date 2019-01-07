@@ -1,7 +1,0 @@
-function rake {
-  bundle exec rake "$@"
-}
-
-function rails {
-  bundle exec rails "$@"
-}
