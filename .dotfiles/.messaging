@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 bold=$(tput bold)
 reset=$(tput sgr0)
 
