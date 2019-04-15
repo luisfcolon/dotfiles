@@ -1,0 +1,27 @@
+bold=$(tput bold)
+reset=$(tput sgr0)
+
+purple=$(tput setaf 171)
+red=$(tput setaf 1)
+green=$(tput setaf 76)
+blue=$(tput setaf 38)
+cyan=$(tput setaf 6)
+yellow=$(tput setaf 3)
+white=$(tput setaf 7)
+light_grey=$(tput setaf 250)
+
+echo_success() {
+  echo $bold$green"✔"$reset $green$@$reset
+}
+
+echo_error() {
+  echo $bold$red"✖"$reset $red$@$reset
+}
+
+echo_warning() {
+  echo $bold$yellow"⌀"$reset $yellow$@$reset
+}
+
+echo_info() {
+  echo $bold$blue"➜"$reset $blue$@$reset
+}
