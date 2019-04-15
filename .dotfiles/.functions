@@ -1,16 +1,9 @@
 #!/usr/bin/env bash
 
-rvmup() {
-  echo "Installing and switching to ruby-$1..."
-  rvm get stable
-  rvm install ruby-$1
-  rvm use $1
-  gem install bundler
-  bundle install -j4
-}
+source $PWD/.messaging
 
 killport() {
-  echo "Killing all processes running on port $1..."
+  echo_warning "Killing all processes running on port $1..."
   lsof -n -i:$1 | grep LISTEN | awk '{ print $2 }' | uniq | xargs kill -9
 }
 
@@ -18,28 +11,30 @@ titlebar() {
   echo -n $'\e]0;'"$*"$'\a';
 }
 
-ltrim() {
-  local char=${1:-[:space:]}
-  sed "s%^[${char//%/\\%}]*%%"
-}
-
-rtrim() {
-  local char=${1:-[:space:]}
-  sed "s%[${char//%/\\%}]*$%%"
-}
-
-trim() {
-  ltrim "$1" | rtrim "$1"
-}
-
-squeeze() {
-  local char=${1:-[[:space:]]}
-  sed "s%\(${char//%/\\%}\)\+%\1%g" | trim "$char"
-}
-
 git-log-pretty() {
   local -ar git_log_options=("$@")
   local -r format='%x00%h%x00%cd%x00%an%x00%s%x00'
 
    git log --abbrev-commit --date=short --pretty=format:${format} ${git_log_options[@]} | gawk -F '\0' '{ printf "%s\033[31m%s\033[0m \033[32m%s\033[0m \033[30;1m%-20s\033[0m %-60s \033[33m%s\n", $1, $2, $3, gensub(/(.{19}).{2,}/, "\\1…","g",$4), gensub(/(.{59}).{2,}/, "\\1…","g",$5), $6 }' | less -R -X -F
+}
+
+zipf() {
+  if [ -z "$1" ]
+  then
+    echo_error "You forgot to pass in a directory"
+    return 1
+  fi
+
+  directory=$1
+
+  if [ -z "$2" ]
+  then
+    filename=$1
+  else
+    filename=$2
+  fi
+
+  echo_info "Zipping $directory into the file $filename.zip"
+  zip -r $filename.zip $directory -x "*.DS_Store" > /dev/null
+  echo_success "Zipped up $directory: $filename.zip"
 }
