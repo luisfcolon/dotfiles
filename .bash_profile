@@ -1,25 +1,44 @@
 #!/usr/bin/env bash
 
+pushd() {
+  command pushd $@ > /dev/null
+}
+
+popd() {
+  command popd $@ > /dev/null
+}
+
+dotfiles_dir=$HOME/.dotfiles
+
 declare -a rootfiles=(
   ".profile"
 )
 
 declare -a dotfiles=(
   ".paths"
-  ".macos"
   ".exports"
+  ".functions"
   ".aliases"
   ".gitaliases"
-  ".functions"
   ".prompt"
+  ".macos"
 )
 
+pushd $HOME
 for file in "${rootfiles[@]}"
 do
-   source ~/$file
+   source $file
 done
+popd
 
+pushd $dotfiles_dir
 for file in "${dotfiles[@]}"
 do
-   source ~/.dotfiles/$file
+  source $file
 done
+popd
+
+unset -f pushd
+unset -f popd
+
+eval "$(rbenv init -)"
