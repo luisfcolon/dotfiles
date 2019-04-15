@@ -3,7 +3,6 @@
 # Paths and directories
 export PATH=/usr/local/sbin:~/.composer/vendor/bin:/usr/local/bin:/usr/local/mysql/bin:$PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 # Remove duplicates from PATH
 remove_dups() {
