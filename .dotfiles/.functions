@@ -11,6 +11,7 @@ titlebar() {
   echo -n $'\e]0;'"$*"$'\a';
 }
 
+# Example: git-log-pretty origin/master..origin/staging
 git-log-pretty() {
   local -ar git_log_options=("$@")
   local -r format='%x00%h%x00%cd%x00%an%x00%s%x00'
