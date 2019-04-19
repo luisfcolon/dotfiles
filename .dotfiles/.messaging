@@ -12,6 +12,11 @@ yellow=$(tput setaf 3)
 white=$(tput setaf 7)
 light_grey=$(tput setaf 250)
 
+echo_header() {
+  echo $purple$bold"---------------[ $@ ]---------------"$reset
+  echo
+}
+
 echo_success() {
   echo $bold$green"✔"$reset $green$@$reset
 }
@@ -25,5 +30,9 @@ echo_warning() {
 }
 
 echo_info() {
-  echo $bold$blue"➜"$reset $blue$@$reset
+  echo $bold$blue"➜"$reset $bold$blue$@$reset
+}
+
+echo_text() {
+  echo $bold$grey"•"$reset $grey$@$reset
 }
