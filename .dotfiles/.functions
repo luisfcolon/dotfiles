@@ -39,3 +39,22 @@ zipf() {
   zip -r $filename.zip $directory -x "*.DS_Store" > /dev/null
   echo_success "Zipped up $directory: $filename.zip"
 }
+
+slugify() {
+  echo "$1" | iconv -t ascii//TRANSLIT | sed -E 's/[~\^]+//g' | sed -E 's/[^a-zA-Z0-9]+/-/g' | sed -E 's/^-+\|-+$//g' | tr A-Z a-z
+}
+
+comment() {
+  echo "${1//-/ }"
+}
+
+cb() {
+  local description=$(slugify $2)
+  local default_origin='edge'
+
+  if [ -z "$3" ]; then
+    gc -b $1-${description} origin/${default_origin}
+  else
+    gc -b $1-${description} origin/$3
+  fi
+}
