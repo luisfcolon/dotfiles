@@ -33,6 +33,10 @@ echo_info() {
   echo $bold$blue"➜"$reset $bold$blue$@$reset
 }
 
-echo_text() {
+echo_bullet() {
   echo $bold$grey"•"$reset $grey$@$reset
+}
+
+echo_text() {
+  echo $white$@$reset
 }
