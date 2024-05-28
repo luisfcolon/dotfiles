@@ -63,3 +63,12 @@ generate-password() {
   echo $(date +%s | sha256sum | base64 | head -c 30 ; echo)
 }
 
+ghc() {
+  default_github_org="StashInvest"
+  gh repo clone $default_github_org/$1
+}
+
+gc-pull() {
+  gc $1 && git pull origin $1
+}
+
