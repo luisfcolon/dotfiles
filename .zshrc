@@ -19,6 +19,7 @@ SAVEHIST=50000
 setopt auto_cd
 setopt sharehistory
 setopt hist_ignore_all_dups
+setopt hist_ignore_space
 
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST

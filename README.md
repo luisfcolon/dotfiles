@@ -1,10 +1,6 @@
 # dotfiles
 
-This repo contains my personal macOS terminal setup — dotfiles, aliases, functions, and shell config built around **zsh**. Clone it to replicate the environment on a new machine.
-
-## Prerequisites
-
-The following tools and dependencies need to be installed for the dotfiles to work correctly.
+This repo contains my personal macOS terminal setup — dotfiles, aliases, functions, and shell config built around **zsh**.
 
 ### MacOS Settings
 
@@ -13,6 +9,10 @@ This only needs to run once
 ```bash
 bash $HOME/.dotfiles/.macos
 ```
+
+## Prerequisites
+
+The following tools and dependencies need to be installed for these dotfiles to work correctly.
 
 ### Core
 

@@ -13,7 +13,6 @@ export PYTHONIOENCODING="UTF-8";
 export PNPM_HOME="$HOME/Library/pnpm"
 
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH="$HOME/.tofuenv/bin:$PATH"

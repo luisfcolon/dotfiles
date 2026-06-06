@@ -68,12 +68,16 @@ gc-pull() {
 }
 
 rolling() {
+  set -e
+
   git checkout main
   git pull origin main
-  git fetch --all
+
   version=$(git tag | sort -V | tail -1)
-  major=$(echo $version | cut -d. -f1)
-  git tag -d $major
-  git tag $major
-  git push --tag --force origin $major
+  [[ -n "$version" ]] || { echo "No tags found"; return 1; }
+
+  major=$(echo "$version" | cut -d. -f1)
+
+  git tag -f "$major"
+  git push origin "$major" --force
 }
