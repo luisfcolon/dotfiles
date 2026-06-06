@@ -11,6 +11,7 @@ cyan=$(tput setaf 6)
 yellow=$(tput setaf 3)
 white=$(tput setaf 7)
 light_grey=$(tput setaf 250)
+grey=$(tput setaf 245)
 
 echo_header() {
   echo $purple$bold"---------------[ $@ ]---------------"$reset

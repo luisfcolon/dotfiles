@@ -11,3 +11,8 @@ alias grc='git rebase --continue'
 alias gra='git rebase --abort'
 alias gl='git log'
 alias glg='git log --date-order --all --graph --format="%C(green)%h%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
+
+alias gpo='git push origin $(git branch --show-current)'
+alias gplo='git pull origin $(git branch --show-current)'
+alias gpf='git push -f origin $(git branch --show-current)'
+alias ec='git commit --allow-empty -m "Triggering build" && git push origin $(git branch --show-current)'
