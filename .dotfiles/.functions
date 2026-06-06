@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source $PWD/.messaging
+source $HOME/.dotfiles/.messaging
 
 killport() {
   echo_warning "Killing all processes running on port $1..."
@@ -63,12 +63,17 @@ generate-password() {
   echo $(date +%s | sha256sum | base64 | head -c 30 ; echo)
 }
 
-ghc() {
-  default_github_org="StashInvest"
-  gh repo clone $default_github_org/$1
-}
-
 gc-pull() {
-  gc $1 && git pull origin $1
+  gc $1 && git pull origin $1 && gfa
 }
 
+rolling() {
+  git checkout main
+  git pull origin main
+  git fetch --all
+  version=`git tag | sort -V | tail -1`
+  major=`echo $version | cut -d. -f1`
+  git tag -d $major
+  git tag $major
+  git push --tag --force origin $major
+}
