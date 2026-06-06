@@ -16,7 +16,7 @@ zstyle ':vcs_info:git:*' formats '%F{green}(%b%)%f'
 
 HISTSIZE=50000
 HISTFILE=$HOME/.zsh_history
-SAVEHIST=5000
+SAVEHIST=50000
 HISTDUP=erase
 
 setopt auto_cd
