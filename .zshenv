@@ -12,10 +12,12 @@ export LC_ALL="en_US.UTF-8";
 export PYTHONIOENCODING="UTF-8";
 export PNPM_HOME="$HOME/Library/pnpm"
 
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
-export PATH="$HOME/.tofuenv/bin:$PATH"
-export PATH="$PNPM_HOME/bin:$PATH"
-
-typeset -U PATH
+path=(
+  $HOME/.local/bin
+  $HOME/.rbenv/bin
+  /Applications/Postgres.app/Contents/Versions/latest/bin
+  $HOME/.tofuenv/bin
+  $PNPM_HOME/bin
+  $path
+)
+typeset -U path
